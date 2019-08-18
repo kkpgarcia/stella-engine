@@ -10,39 +10,28 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\KTEngine.h" />
-    <ClInclude Include="src\KTEngine\Application.h" />
-    <ClInclude Include="src\KTEngine\Core.h" />
-    <ClInclude Include="src\KTEngine\EntryPoint.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\KTEngine\Application.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{8432711F-E506-4F5F-845E-031326A18480}</ProjectGuid>
+    <ProjectGuid>{5A5A0D9E-4627-68A9-6F40-56515B6C9D37}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
     <RootNamespace>KTEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
-    <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Label="Shared">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -52,43 +41,74 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86_64\KTEngine\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\KTEngine\</IntDir>
+    <TargetName>KTEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
-    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\KTEngine\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\KTEngine\</IntDir>
+    <TargetName>KTEngine</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>KT_PLATFORM_WINDOWS;KT_BUILD_DLL;KT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);KT_PLATFORM_WINDOWS;KT_BUILD_DLL;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>..\bin\Debug-windows-x86_64\KTEngine\KTEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\KTEngine\KTEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\KTEngine\KTEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\KTEngine\KTEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>KT_PLATFORM_WINDOWS;KT_BUILD_DLL;KT_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);KT_PLATFORM_WINDOWS;KT_BUILD_DLL;</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\bin\Release-windows-x86_64\KTEngine\KTEngine.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\KTEngine\KTEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\KTEngine\KTEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\KTEngine\KTEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\KTEngine.h" />
+    <ClInclude Include="src\KTEngine\Application.h" />
+    <ClInclude Include="src\KTEngine\Core.h" />
+    <ClInclude Include="src\KTEngine\EntryPoint.h" />
+    <ClInclude Include="src\KTEngine\Log.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\KTEngine\Application.cpp" />
+    <ClCompile Include="src\KTEngine\Log.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
