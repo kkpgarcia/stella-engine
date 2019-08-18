@@ -9,3 +9,5 @@
 #else
 	#error KT ONLY SUPPORTS WINDOWS 
 #endif
+
+#define BIT(x) (1 << x)

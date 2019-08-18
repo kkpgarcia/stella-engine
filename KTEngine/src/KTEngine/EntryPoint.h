@@ -8,9 +8,7 @@ extern KTEngine::Application* KTEngine::CreateApplication();
 
 int main(int argc, char** argv) {
 	KTEngine::Log::Init();
-	KT_CORE_WARNING("Initialized Log");
-	KT_CORE_LOG("INFOOOO");
-	KT_CORE_ERROR("SAMPLE ERROR");
+	KT_CORE_LOG("Initialized Kitty Engine.");
 
 	auto app = KTEngine::CreateApplication();
 	app->run();

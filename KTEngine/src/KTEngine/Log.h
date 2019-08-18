@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 #include <memory>
 
 namespace KTEngine {
@@ -17,12 +18,14 @@ namespace KTEngine {
 	};
 };
 
+#define KT_CORE_TRACE(...) ::KTEngine::Log::GetCoreLogger()->trace(__VA_ARGS__)
 #define KT_CORE_ERROR(...) ::KTEngine::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define KT_CORE_WARNING(...) ::KTEngine::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define KT_CORE_LOG(...) ::KTEngine::Log::GetCoreLogger()->debug(__VA_ARGS__)
 #define KT_CORE_FATAL(...) ::KTEngine::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
 
+#define KT_CLIENT_TRACE(...) ::KTEngine::Log::GetClientLogger()->trace(__VA_ARGS__
 #define KT_CLIENT_ERROR(...) ::KTEngine::Log::GetClientLogger()->error(__VA_ARGS__)
 #define KT_CLIENT_WARNING(...) ::KTEngine::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define KT_CLIENT_LOG(...) ::KTEngine::Log::GetClientLogger()->debug(__VA_ARGS__)

@@ -4,6 +4,9 @@
     <Filter Include="KTEngine">
       <UniqueIdentifier>{5A5A0D9E-4627-68A9-6F40-56515B6C9D37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="KTEngine\Events">
+      <UniqueIdentifier>{7d748eb3-4a2b-405e-9600-f3fa715b3943}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\KTEngine.h" />
@@ -18,6 +21,18 @@
     </ClInclude>
     <ClInclude Include="src\KTEngine\Log.h">
       <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTEngine\Events\MouseEvent.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTEngine\Events\ApplicationEvent.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTEngine\Events\Event.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTEngine\Events\KeyEvent.h">
+      <Filter>KTEngine\Events</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
