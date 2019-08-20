@@ -1,3 +1,6 @@
 [submodule "KTEngine/vendor/spdlog"]
 	path = KTEngine/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "vendor/GLFW"]
+	path = vendor/GLFW
+	url = https://github.com/TheCherno/GLFW

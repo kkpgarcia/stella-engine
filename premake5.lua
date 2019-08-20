@@ -8,6 +8,12 @@ workspace "KTEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+includeDir = {}
+includeDir["GLFW"] = "vendor/GLFW/include"
+includeDir["SPDLOG"] = "vendor/spdlog/include"
+
+include "vendor/GLFW"
+
 project "KTEngine"
     location "KTEngine"
     kind "SharedLib"
@@ -23,7 +29,12 @@ project "KTEngine"
 
     includedirs {
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/%{includeDir.SPDLOG}",
+        "%{includeDir.GLFW}"
+    }
+
+    links {
+        "GLFW"
     }
 
     filter "system:windows"
@@ -62,7 +73,7 @@ project "Sandbox"
     }
 
     includedirs {
-        "KTEngine/vendor/spdlog/include",
+        "KTEngine/%{includeDir.SPDLOG}",
         "KTEngine/src"
     }
 

@@ -59,7 +59,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KT_PLATFORM_WINDOWS;KT_BUILD_DLL;KT_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>KT_PLATFORM_WINDOWS;KT_BUILD_DLL;KT_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -99,19 +99,24 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\KTEngine\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\KTEngine\Events\Event.h" />
-    <ClInclude Include="src\KTEngine\Events\KeyEvent.h" />
-    <ClInclude Include="src\KTEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\KTEngine.h" />
     <ClInclude Include="src\KTEngine\Application.h" />
     <ClInclude Include="src\KTEngine\Core.h" />
     <ClInclude Include="src\KTEngine\EntryPoint.h" />
+    <ClInclude Include="src\KTEngine\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\KTEngine\Events\Event.h" />
+    <ClInclude Include="src\KTEngine\Events\KeyEvent.h" />
+    <ClInclude Include="src\KTEngine\Events\MouseEvent.h" />
     <ClInclude Include="src\KTEngine\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KTEngine\Application.cpp" />
     <ClCompile Include="src\KTEngine\Log.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\vendor\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
