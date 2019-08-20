@@ -107,11 +107,16 @@
     <ClInclude Include="src\KTEngine\Events\Event.h" />
     <ClInclude Include="src\KTEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\KTEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\KTEngine\Input.h" />
     <ClInclude Include="src\KTEngine\Log.h" />
+    <ClInclude Include="src\KTEngine\Window.h" />
+    <ClInclude Include="src\KTPH.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\KTEngine\Application.cpp" />
     <ClCompile Include="src\KTEngine\Log.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\vendor\GLFW\GLFW.vcxproj">
@@ -121,4 +126,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-</Project>
+</Project> 

@@ -2,8 +2,7 @@
 
 #include "KTEngine/Core.h"
 
-#include <string>
-#include <functional>
+#include "KTPH.h"
 
 namespace KTEngine {
 	enum class EventType {

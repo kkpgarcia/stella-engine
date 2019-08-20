@@ -2,7 +2,7 @@
 
 #include "Event.h"
 
-#include <sstream>
+#include "KTPH.h"
 
 namespace KTEngine {
 	class KT_API KeyEvent : public Event {

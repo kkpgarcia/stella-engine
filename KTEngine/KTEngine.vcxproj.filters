@@ -7,6 +7,12 @@
     <Filter Include="KTEngine\Events">
       <UniqueIdentifier>{FE9CDEAC-6A28-4C71-7339-CF65DF43A871}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\KTEngine.h" />
@@ -31,8 +37,18 @@
     <ClInclude Include="src\KTEngine\Events\MouseEvent.h">
       <Filter>KTEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\KTEngine\Input.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\KTEngine\Log.h">
       <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTEngine\Window.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KTPH.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="src\KTEngine\Log.cpp">
       <Filter>KTEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
