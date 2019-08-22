@@ -1,10 +1,10 @@
 #pragma once
 
-#include "StellaEngine/Core.h"
+#include "Stella/Core.h"
 
 #include "StellaPH.h"
 
-namespace StellaEngine {
+namespace Stella {
 	enum class EventType {
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,

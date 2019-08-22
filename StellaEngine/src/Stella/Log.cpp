@@ -1,8 +1,9 @@
+#include "StellaPH.h"
 #include "Log.h"
 
 #include "spdlog/sinks/stdout_color_sinks.h"
 
-namespace StellaEngine {
+namespace Stella {
 	std::shared_ptr<spdlog::logger> Log::s_CoreLogger;
 	std::shared_ptr<spdlog::logger> Log::s_ClientLogger;
 

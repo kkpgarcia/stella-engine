@@ -2,10 +2,10 @@
 
 #include "StellaPH.h"
 
-#include "StellaEngine/Core.h"
-#include "StellaEngine/Events/Event.h"
+#include "Stella/Core.h"
+#include "Stella/Events/Event.h"
 
-namespace StellaEngine {
+namespace Stella {
 	struct WindowProps {
 		std::string Title;
 		unsigned int Width;
@@ -29,7 +29,7 @@ namespace StellaEngine {
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
-		virtual void* GetNativeWindow() const = 0;
+		//virtual void* GetNativeWindow() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
 	};

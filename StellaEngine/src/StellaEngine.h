@@ -1,7 +1,7 @@
 #pragma once
 
-#include "StellaEngine/Application.h"
+#include "Stella/Application.h"
 
 //Entry Point
-#include "StellaEngine/EntryPoint.h"
+#include "Stella/EntryPoint.h"
 //

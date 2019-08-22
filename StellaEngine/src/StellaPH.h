@@ -12,7 +12,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include <StellaEngine/Log.h>
+#include <Stella/Log.h>
 
 #ifdef STELLA_PLATFORM WINDOWS
 #include <Windows.h>

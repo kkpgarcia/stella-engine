@@ -1,11 +1,11 @@
 #include <StellaEngine.h>
 
-class Sandbox : public StellaEngine::Application {
+class Sandbox : public Stella::Application {
 public:
 	Sandbox() {}
 	~Sandbox() {}
 };
 
-StellaEngine::Application* StellaEngine::CreateApplication() {
+Stella::Application* Stella::CreateApplication() {
 	return new Sandbox();
 }

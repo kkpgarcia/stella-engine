@@ -22,6 +22,9 @@ project "StellaEngine"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+    pchheader "StellaPH.h"
+    pchsource "src/StellaPH.cpp"
     
     files {
         "%{prj.name}/src/**.h",
@@ -35,7 +38,8 @@ project "StellaEngine"
     }
 
     links {
-        "GLFW"
+        "GLFW",
+        "opengl32.lib"
     }
 
     filter "system:windows"

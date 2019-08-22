@@ -1,65 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="KTEngine">
-      <UniqueIdentifier>{5A5A0D9E-4627-68A9-6F40-56515B6C9D37}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="KTEngine\Events">
-      <UniqueIdentifier>{FE9CDEAC-6A28-4C71-7339-CF65DF43A871}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
+    <Filter Include="StellaEngine">
+      <UniqueIdentifier>{00B2C2E1-EC14-5286-959A-8A3C81DC1D09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StellaEngine\Events">
+      <UniqueIdentifier>{E41DFCA4-507F-D9B2-D9EC-1F65454D1072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\StellaEngine.h" />
     <ClInclude Include="src\StellaPH.h" />
-    <ClInclude Include="src\StellaEngine\Events\ApplicationEvent.h">
-      <Filter>KTEngine\Events</Filter>
+    <ClInclude Include="src\Stella\Events\ApplicationEvent.h">
+      <Filter>StellaEngine\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Events\Event.h">
-      <Filter>KTEngine\Events</Filter>
+    <ClInclude Include="src\Stella\Events\Event.h">
+      <Filter>StellaEngine\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Events\KeyEvent.h">
-      <Filter>KTEngine\Events</Filter>
+    <ClInclude Include="src\Stella\Events\KeyEvent.h">
+      <Filter>StellaEngine\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Events\MouseEvent.h">
-      <Filter>KTEngine\Events</Filter>
+    <ClInclude Include="src\Stella\Events\MouseEvent.h">
+      <Filter>StellaEngine\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Application.h">
-      <Filter>KTEngine</Filter>
+    <ClInclude Include="src\Stella\Application.h">
+      <Filter>StellaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Core.h">
-      <Filter>KTEngine</Filter>
+    <ClInclude Include="src\Stella\Core.h">
+      <Filter>StellaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\EntryPoint.h">
-      <Filter>KTEngine</Filter>
+    <ClInclude Include="src\Stella\EntryPoint.h">
+      <Filter>StellaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Input.h">
-      <Filter>KTEngine</Filter>
+    <ClInclude Include="src\Stella\Log.h">
+      <Filter>StellaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine\Log.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\StellaEngine\Window.h">
-      <Filter>KTEngine</Filter>
+    <ClInclude Include="src\Stella\Window.h">
+      <Filter>StellaEngine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\StellaEngine\Application.cpp">
-      <Filter>KTEngine</Filter>
+    <ClCompile Include="src\StellaPH.cpp" />
+    <ClCompile Include="src\Stella\Application.cpp">
+      <Filter>StellaEngine</Filter>
     </ClCompile>
-    <ClCompile Include="src\StellaEngine\Log.cpp">
-      <Filter>KTEngine</Filter>
+    <ClCompile Include="src\Stella\Log.cpp">
+      <Filter>StellaEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
