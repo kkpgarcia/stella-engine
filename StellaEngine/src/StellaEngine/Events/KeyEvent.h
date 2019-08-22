@@ -2,10 +2,10 @@
 
 #include "Event.h"
 
-#include "KTPH.h"
+#include "StellaPH.h"
 
-namespace KTEngine {
-	class KT_API KeyEvent : public Event {
+namespace StellaEngine {
+	class STELLA_API KeyEvent : public Event {
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }
 		
@@ -15,7 +15,7 @@ namespace KTEngine {
 		int m_KeyCode;
 	};
 
-	class KT_API KeyPressedEvent : public KeyEvent {
+	class STELLA_API KeyPressedEvent : public KeyEvent {
 	public:
 		KeyPressedEvent(int keycode, int repeatCount) : KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
@@ -32,7 +32,7 @@ namespace KTEngine {
 
 	};
 
-	class KT_API KeyReleasedEvent : public KeyEvent {
+	class STELLA_API KeyReleasedEvent : public KeyEvent {
 	public:
 		KeyReleasedEvent(int keycode) : KeyEvent(keycode) {}
 
@@ -45,7 +45,7 @@ namespace KTEngine {
 		EVENT_CLASS_TYPE(KeyReleased)
 	};
 
-	class KT_API KeyTypedEvent : public KeyEvent {
+	class STELLA_API KeyTypedEvent : public KeyEvent {
 	public:
 		KeyTypedEvent(int keycode) : KeyEvent(keycode) {}
 

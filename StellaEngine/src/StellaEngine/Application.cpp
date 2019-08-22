@@ -1,10 +1,10 @@
 #include "Application.h"
 
-#include "KTPH.h"
+#include "StellaPH.h"
 #include "Input.h"
 #include <GLFW/glfw3.h>
 
-namespace KTEngine {
+namespace StellaEngine {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 

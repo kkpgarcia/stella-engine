@@ -1,5 +1,6 @@
-workspace "KTEngine"
+workspace "StellaEngine"
     architecture "x64"
+	startproject "Sandbox"
 
     configurations {
         "Debug",
@@ -14,8 +15,8 @@ includeDir["SPDLOG"] = "vendor/spdlog/include"
 
 include "vendor/GLFW"
 
-project "KTEngine"
-    location "KTEngine"
+project "StellaEngine"
+    location "StellaEngine"
     kind "SharedLib"
     language "C++"
 
@@ -43,8 +44,8 @@ project "KTEngine"
         systemversion "latest"
 
         defines {
-            "KT_PLATFORM_WINDOWS",
-            "KT_BUILD_DLL"
+            "STELLA_PLATFORM_WINDOWS",
+            "STELLA_BUILD_DLL"
         }
 
         postbuildcommands {
@@ -52,11 +53,11 @@ project "KTEngine"
         }
 
         filter "configurations:Debug"
-            defines "KT_DEBUG"
+            defines "STELLA_DEBUG"
             symbols "On"
 
         filter "configurations:Release"
-            defines "KT_RELEASE"
+            defines "STELLA_RELEASE"
             optimize "On"
 
 project "Sandbox"
@@ -73,12 +74,12 @@ project "Sandbox"
     }
 
     includedirs {
-        "KTEngine/%{includeDir.SPDLOG}",
-        "KTEngine/src"
+        "StellaEngine/%{includeDir.SPDLOG}",
+        "StellaEngine/src"
     }
 
     links {
-        "KTEngine"
+        "StellaEngine"
     }
 
     filter "system:windows"
@@ -87,13 +88,13 @@ project "Sandbox"
         systemversion "latest"
 
         defines {
-            "KT_PLATFORM_WINDOWS"
+            "STELLA_PLATFORM_WINDOWS"
         }
 
         filter "configurations:Debug"
-            defines "KT_DEBUG"
+            defines "STELLA_DEBUG"
             symbols "On"
 
         filter "configurations:Release"
-            defines "KT_RELEASE"
+            defines "STELLA_RELEASE"
             optimize "On"

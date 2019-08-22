@@ -1,20 +1,20 @@
 #pragma once
 
-#include "KTPH.h"
+#include "StellaPH.h"
 
-#include "KTEngine/Core.h"
-#include "KTEngine/Events/Event.h"
+#include "StellaEngine/Core.h"
+#include "StellaEngine/Events/Event.h"
 
-namespace KTEngine {
+namespace StellaEngine {
 	struct WindowProps {
 		std::string Title;
 		unsigned int Width;
 		unsigned int Height;
 
-		WindowProps(const std::string& title = "KTEngine", unsigned int width = 1280, unsigned int height = 720) : Title(title), Width(width), Height(height) {}
+		WindowProps(const std::string& title = "StellaEngine", unsigned int width = 1280, unsigned int height = 720) : Title(title), Width(width), Height(height) {}
 	};
 
-	class KT_API Window {
+	class STELLA_API Window {
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
 

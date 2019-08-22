@@ -2,10 +2,10 @@
 
 #include "Core.h"
 #include "Window.h"
-#include "KTEngine/Events/Event.h"
-#include "KTEngine/Events/ApplicationEvent.h"
+#include "StellaEngine/Events/Event.h"
+#include "StellaEngine/Events/ApplicationEvent.h"
 
-namespace KTEngine {
+namespace StellaEngine {
 	class Application
 	{
 	public:

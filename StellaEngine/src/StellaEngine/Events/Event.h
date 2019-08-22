@@ -1,10 +1,10 @@
 #pragma once
 
-#include "KTEngine/Core.h"
+#include "StellaEngine/Core.h"
 
-#include "KTPH.h"
+#include "StellaPH.h"
 
-namespace KTEngine {
+namespace StellaEngine {
 	enum class EventType {
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
@@ -29,7 +29,7 @@ namespace KTEngine {
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class KT_API Event {
+	class STELLA_API Event {
 	public:
 		bool Handled = false;
 		virtual EventType GetEventType() const = 0;

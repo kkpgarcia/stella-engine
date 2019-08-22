@@ -1,11 +1,11 @@
-#include <KTEngine.h>
+#include <StellaEngine.h>
 
-class Sandbox : public KTEngine::Application {
+class Sandbox : public StellaEngine::Application {
 public:
 	Sandbox() {}
 	~Sandbox() {}
 };
 
-KTEngine::Application* KTEngine::CreateApplication() {
+StellaEngine::Application* StellaEngine::CreateApplication() {
 	return new Sandbox();
 }

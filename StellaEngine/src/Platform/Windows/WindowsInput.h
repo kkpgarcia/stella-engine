@@ -1,8 +1,8 @@
 #pragma once
 
-#include "KTEngine/Input.h"
+#include "StellaEngine/Input.h"
 
-namespace KTEngine {
+namespace StellaEngine {
 	
 	class WindowsInput : public Input {
 	protected:

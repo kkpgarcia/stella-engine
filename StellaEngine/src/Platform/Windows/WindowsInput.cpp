@@ -1,10 +1,10 @@
-#include "KTPH.h"
+#include "StellaPH.h"
 #include "WindowsInput.h"
 
-#include "KTEngine/Application.h"
+#include "StellaEngine/Application.h"
 #include <GLFW/glfw3.h>
 
-namespace KTEngine {
+namespace StellaEngine {
 	Input* Input::s_Instance = new WindowsInput();
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode) {

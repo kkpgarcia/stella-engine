@@ -12,8 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include <KTEngine/Log.h>
+#include <StellaEngine/Log.h>
 
-#ifdef KT_PLATFORM WINDOWS
+#ifdef STELLA_PLATFORM WINDOWS
 #include <Windows.h>
 #endif

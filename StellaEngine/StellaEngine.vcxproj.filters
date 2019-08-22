@@ -15,51 +15,51 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\KTEngine.h" />
-    <ClInclude Include="src\KTEngine\Application.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Core.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\EntryPoint.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Events\ApplicationEvent.h">
-      <Filter>KTEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Events\Event.h">
-      <Filter>KTEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Events\KeyEvent.h">
-      <Filter>KTEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Events\MouseEvent.h">
-      <Filter>KTEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Input.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Log.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTEngine\Window.h">
-      <Filter>KTEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\KTPH.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\StellaEngine.h" />
+    <ClInclude Include="src\StellaPH.h" />
+    <ClInclude Include="src\StellaEngine\Events\ApplicationEvent.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Events\Event.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Events\KeyEvent.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Events\MouseEvent.h">
+      <Filter>KTEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Application.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Core.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\EntryPoint.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Input.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Log.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StellaEngine\Window.h">
+      <Filter>KTEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\KTEngine\Application.cpp">
-      <Filter>KTEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\KTEngine\Log.cpp">
-      <Filter>KTEngine</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StellaEngine\Application.cpp">
+      <Filter>KTEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StellaEngine\Log.cpp">
+      <Filter>KTEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

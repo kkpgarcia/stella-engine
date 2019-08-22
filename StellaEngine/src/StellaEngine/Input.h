@@ -1,11 +1,11 @@
 #pragma once
 
-#include "KTEngine/Core.h"
+#include "StellaEngine/Core.h"
 
-#include "KTPH.h"
+#include "StellaPH.h"
 
-namespace KTEngine {
-	class KT_API Input {
+namespace StellaEngine {
+	class STELLA_API Input {
 	public:
 		inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }
 

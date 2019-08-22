@@ -2,10 +2,10 @@
 
 #include "Event.h"
 
-#include "KTPH.h"
+#include "StellaPH.h"
 
-namespace KTEngine {
-	class KT_API WindowResizeEvent : public Event {
+namespace StellaEngine {
+	class STELLA_API WindowResizeEvent : public Event {
 	public:
 		WindowResizeEvent(unsigned int width, unsigned int height) : m_Width(width), m_Height(height) {}
 		
@@ -25,7 +25,7 @@ namespace KTEngine {
 		unsigned int m_Height;
 	};
 
-	class KT_API WindowCloseEvent : public Event {
+	class STELLA_API WindowCloseEvent : public Event {
 	public:
 		WindowCloseEvent() {}
 
@@ -33,7 +33,7 @@ namespace KTEngine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
 
-	class KT_API AppTickEvent : public Event {
+	class STELLA_API AppTickEvent : public Event {
 	public:
 		AppTickEvent() {}
 
@@ -41,7 +41,7 @@ namespace KTEngine {
 		EVENT_CLASS_CATEGORY(EventCategoryApplication);
 	};
 
-	class KT_API AppRenderEvent : public Event {
+	class STELLA_API AppRenderEvent : public Event {
 	public:
 		AppRenderEvent() {}
 

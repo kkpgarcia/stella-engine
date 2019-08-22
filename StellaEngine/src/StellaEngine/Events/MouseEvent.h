@@ -2,10 +2,10 @@
 
 #include "Event.h"
 
-#include "KTPH.h"
+#include "StellaPH.h"
 
-namespace KTEngine {
-	class KT_API MouseMovedEvent : public Event {
+namespace StellaEngine {
+	class STELLA_API MouseMovedEvent : public Event {
 	public:
 		MouseMovedEvent(float x, float y) : m_MouseX(x), m_MouseY(y) {}
 
@@ -26,7 +26,7 @@ namespace KTEngine {
 		float m_MouseY;
 	};
 
-	class KT_API MouseScrolledEvent : public Event {
+	class STELLA_API MouseScrolledEvent : public Event {
 	public:
 		MouseScrolledEvent(float xOffset, float yOffset) : m_XOffset(xOffset), m_YOffset(yOffset) {}
 		
@@ -47,7 +47,7 @@ namespace KTEngine {
 		float m_YOffset;
 	};
 
-	class KT_API MouseButtonEvent : public Event
+	class STELLA_API MouseButtonEvent : public Event
 	{
 	public:
 		inline int GetMouseButton() const { return m_Button; }
@@ -60,7 +60,7 @@ namespace KTEngine {
 		int m_Button;
 	};
 
-	class KT_API MouseButtonPressedEvent : public MouseButtonEvent
+	class STELLA_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonPressedEvent(int button)
@@ -76,7 +76,7 @@ namespace KTEngine {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	};
 
-	class KT_API MouseButtonReleasedEvent : public MouseButtonEvent
+	class STELLA_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
 		MouseButtonReleasedEvent(int button)
