@@ -12,8 +12,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 includeDir = {}
 includeDir["GLFW"] = "vendor/GLFW/include"
 includeDir["SPDLOG"] = "vendor/spdlog/include"
+includeDir["GLAD"] = "vendor/GLAD/include"
+includeDir["imgui"] = "vendor/imgui"
 
 include "vendor/GLFW"
+include "vendor/GLAD"
+include "vendor/imgui"
 
 project "StellaEngine"
     location "StellaEngine"
@@ -34,11 +38,15 @@ project "StellaEngine"
     includedirs {
         "%{prj.name}/src",
         "%{prj.name}/%{includeDir.SPDLOG}",
-        "%{includeDir.GLFW}"
+        "%{includeDir.GLFW}",
+        "%{includeDir.GLAD}",
+        "%{includeDir.imgui}"
     }
 
     links {
         "GLFW",
+        "GLAD",
+        "ImGui",
         "opengl32.lib"
     }
 
@@ -49,7 +57,8 @@ project "StellaEngine"
 
         defines {
             "STELLA_PLATFORM_WINDOWS",
-            "STELLA_BUILD_DLL"
+            "STELLA_BUILD_DLL",
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands {
@@ -57,7 +66,10 @@ project "StellaEngine"
         }
 
         filter "configurations:Debug"
-            defines "STELLA_DEBUG"
+            defines {
+                "STELLA_DEBUG",
+                "STELLA_ENABLE_ASSERTS"
+            }
             symbols "On"
 
         filter "configurations:Release"
@@ -96,7 +108,10 @@ project "Sandbox"
         }
 
         filter "configurations:Debug"
-            defines "STELLA_DEBUG"
+            defines {
+                "STELLA_DEBUG",
+                "STELLA_ENABLE_ASSERTS"
+            }
             symbols "On"
 
         filter "configurations:Release"

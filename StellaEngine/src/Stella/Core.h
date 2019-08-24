@@ -10,4 +10,12 @@
 	#error KT ONLY SUPPORTS WINDOWS 
 #endif
 
+#ifdef STELLA_ENABLE_ASSERTS
+	#define STELLA_ASSERT(x, ...) { if(!(x)) { STELLA_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define STELLA_CORE_ASSERT(x, ...) { if(!(x)) { STELLA_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define STELLA_ASSERT(x, ...)
+	#define STELLA_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)

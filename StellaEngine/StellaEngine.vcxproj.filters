@@ -4,64 +4,91 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
-    <Filter Include="StellaEngine">
-      <UniqueIdentifier>{00B2C2E1-EC14-5286-959A-8A3C81DC1D09}</UniqueIdentifier>
+    <Filter Include="Stella">
+      <UniqueIdentifier>{6A87E7D1-5629-12A8-3FE4-25FC2B2599F8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="StellaEngine\Events">
-      <UniqueIdentifier>{E41DFCA4-507F-D9B2-D9EC-1F65454D1072}</UniqueIdentifier>
+    <Filter Include="Stella\Events">
+      <UniqueIdentifier>{0E78011E-7A38-7D54-4373-C6D1AFF2C130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stella\ImGui">
+      <UniqueIdentifier>{1464D6AB-00C7-6550-A94C-9E06958E31D3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\StellaEngine.h" />
-    <ClInclude Include="src\StellaPH.h" />
-    <ClInclude Include="src\Stella\Events\ApplicationEvent.h">
-      <Filter>StellaEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Stella\Events\Event.h">
-      <Filter>StellaEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Stella\Events\KeyEvent.h">
-      <Filter>StellaEngine\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Stella\Events\MouseEvent.h">
-      <Filter>StellaEngine\Events</Filter>
-    </ClInclude>
     <ClInclude Include="src\Stella\Application.h">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
     </ClInclude>
     <ClInclude Include="src\Stella\Core.h">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
     </ClInclude>
     <ClInclude Include="src\Stella\EntryPoint.h">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\Events\ApplicationEvent.h">
+      <Filter>Stella\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\Events\Event.h">
+      <Filter>Stella\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\Events\KeyEvent.h">
+      <Filter>Stella\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\Events\MouseEvent.h">
+      <Filter>Stella\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\ImGui\ImGuiLayer.h">
+      <Filter>Stella\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\Layer.h">
+      <Filter>Stella</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Stella\LayerStack.h">
+      <Filter>Stella</Filter>
     </ClInclude>
     <ClInclude Include="src\Stella\Log.h">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
     </ClInclude>
     <ClInclude Include="src\Stella\Window.h">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
     </ClInclude>
-    <ClInclude Include="src\Stella\Layer.h" />
-    <ClInclude Include="src\Stella\LayerStack.h" />
+    <ClInclude Include="src\StellaEngine.h" />
+    <ClInclude Include="src\StellaPH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\StellaPH.cpp" />
     <ClCompile Include="src\Stella\Application.cpp">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Stella\ImGui\ImGuiLayer.cpp">
+      <Filter>Stella\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Stella\Layer.cpp">
+      <Filter>Stella</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Stella\LayerStack.cpp">
+      <Filter>Stella</Filter>
     </ClCompile>
     <ClCompile Include="src\Stella\Log.cpp">
-      <Filter>StellaEngine</Filter>
+      <Filter>Stella</Filter>
     </ClCompile>
-    <ClCompile Include="src\Stella\Layer.cpp" />
-    <ClCompile Include="src\Stella\LayerStack.cpp" />
+    <ClCompile Include="src\StellaPH.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

@@ -59,8 +59,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>StellaPH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;STELLA_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;GLFW_INCLUDE_NONE;STELLA_DEBUG;STELLA_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;..\vendor\GLAD\include;..\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -81,8 +81,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>StellaPH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;STELLA_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;GLFW_INCLUDE_NONE;STELLA_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;..\vendor\GLAD\include;..\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -103,8 +103,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
-    <ClInclude Include="src\StellaEngine.h" />
     <ClInclude Include="src\Stella\Application.h" />
     <ClInclude Include="src\Stella\Core.h" />
     <ClInclude Include="src\Stella\EntryPoint.h" />
@@ -112,15 +112,19 @@
     <ClInclude Include="src\Stella\Events\Event.h" />
     <ClInclude Include="src\Stella\Events\KeyEvent.h" />
     <ClInclude Include="src\Stella\Events\MouseEvent.h" />
+    <ClInclude Include="src\Stella\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Stella\Layer.h" />
     <ClInclude Include="src\Stella\LayerStack.h" />
     <ClInclude Include="src\Stella\Log.h" />
     <ClInclude Include="src\Stella\Window.h" />
+    <ClInclude Include="src\StellaEngine.h" />
     <ClInclude Include="src\StellaPH.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Stella\Application.cpp" />
+    <ClCompile Include="src\Stella\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Stella\Layer.cpp" />
     <ClCompile Include="src\Stella\LayerStack.cpp" />
     <ClCompile Include="src\Stella\Log.cpp" />
@@ -130,6 +134,15 @@
     <ProjectReference Include="..\vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\vendor\GLAD\GLAD.vcxproj">
+      <Project>{5D4A857C-4981-860D-F26D-6C10DE83020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
