@@ -47,6 +47,8 @@
     <ClInclude Include="src\Stella\Window.h">
       <Filter>StellaEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\Stella\Layer.h" />
+    <ClInclude Include="src\Stella\LayerStack.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -59,5 +61,7 @@
     <ClCompile Include="src\Stella\Log.cpp">
       <Filter>StellaEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Stella\Layer.cpp" />
+    <ClCompile Include="src\Stella\LayerStack.cpp" />
   </ItemGroup>
 </Project>

@@ -112,6 +112,8 @@
     <ClInclude Include="src\Stella\Events\Event.h" />
     <ClInclude Include="src\Stella\Events\KeyEvent.h" />
     <ClInclude Include="src\Stella\Events\MouseEvent.h" />
+    <ClInclude Include="src\Stella\Layer.h" />
+    <ClInclude Include="src\Stella\LayerStack.h" />
     <ClInclude Include="src\Stella\Log.h" />
     <ClInclude Include="src\Stella\Window.h" />
     <ClInclude Include="src\StellaPH.h" />
@@ -119,6 +121,8 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Stella\Application.cpp" />
+    <ClCompile Include="src\Stella\Layer.cpp" />
+    <ClCompile Include="src\Stella\LayerStack.cpp" />
     <ClCompile Include="src\Stella\Log.cpp" />
     <ClCompile Include="src\StellaPH.cpp" />
   </ItemGroup>
