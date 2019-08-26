@@ -6,6 +6,8 @@
 #include "Stella/Events/Event.h"
 #include "Stella/Events/ApplicationEvent.h"
 
+#include "Stella/ImGui/ImGuiLayer.h"
+
 namespace Stella {
 	class STELLA_API Application
 	{
@@ -28,6 +30,7 @@ namespace Stella {
 		bool OnWindowClose(WindowCloseEvent& e);
 		
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

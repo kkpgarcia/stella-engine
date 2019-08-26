@@ -1,15 +1,30 @@
 #include <StellaEngine.h>
 
+#include "../imgui/imgui.h"
+
 class ExampleLayer : public Stella::Layer {
 public:
 	ExampleLayer() : Layer ("Example") {}
 
 	void OnUpdate() override {
-		STELLA_DEBUG("ExampleLayer::Update()");
+		if (Stella::Input::IsKeyPressed(ST_KEY_TAB)) {
+			STELLA_TRACE("Tab key is pressed (poll)!");
+		}
+	}
+
+	virtual void OnImGuiRender() override {
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
 	}
 
 	void OnEvent(Stella::Event& evt) override {
-		STELLA_TRACE("{0}", evt);
+		if (evt.GetEventType() == Stella::EventType::KeyPressed) {
+			Stella::KeyPressedEvent& e = (Stella::KeyPressedEvent&)evt;
+			if (e.GetKeyCode() == ST_KEY_TAB)
+				STELLA_TRACE("Tabe key is pressed (event)!");
+			STELLA_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 
@@ -17,7 +32,6 @@ class Sandbox : public Stella::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Stella::ImGuiLayer());
 	}
 	~Sandbox() {}
 };

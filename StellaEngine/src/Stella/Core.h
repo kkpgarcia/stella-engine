@@ -1,13 +1,21 @@
 #pragma once
 
 #ifdef STELLA_PLATFORM_WINDOWS
+#if STELLA_DYNAMIC_LINK
 #ifdef STELLA_BUILD_DLL
 		#define STELLA_API __declspec(dllexport)
 	#else
 		#define STELLA_API __declspec(dllimport)
 	#endif
 #else
+	#define STELLA_API
+#endif
+#else
 	#error KT ONLY SUPPORTS WINDOWS 
+#endif
+
+#ifdef STELLA_DEBUG
+	#define STELLA_ENABLE_ASSERTS
 #endif
 
 #ifdef STELLA_ENABLE_ASSERTS

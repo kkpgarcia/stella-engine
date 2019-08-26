@@ -19,13 +19,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
@@ -41,26 +41,24 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug-windows-x86_64\StellaEngine\</OutDir>
     <IntDir>..\bin-int\Debug-windows-x86_64\StellaEngine\</IntDir>
     <TargetName>StellaEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release-windows-x86_64\StellaEngine\</OutDir>
     <IntDir>..\bin-int\Release-windows-x86_64\StellaEngine\</IntDir>
     <TargetName>StellaEngine</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>StellaPH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;GLFW_INCLUDE_NONE;STELLA_DEBUG;STELLA_ENABLE_ASSERTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;..\vendor\GLAD\include;..\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;GLFW_INCLUDE_NONE;STELLA_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;..\vendor\GLAD\include;..\vendor\imgui;..\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -69,20 +67,18 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Debug-windows-x86_64\StellaEngine\StellaEngine.lib</ImportLibrary>
     </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\StellaEngine\StellaEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\StellaEngine\StellaEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\StellaEngine\StellaEngine.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
-    </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>StellaPH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;GLFW_INCLUDE_NONE;STELLA_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;..\vendor\GLAD\include;..\vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;STELLA_PLATFORM_WINDOWS;STELLA_BUILD_DLL;GLFW_INCLUDE_NONE;STELLA_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;..\vendor\GLFW\include;..\vendor\GLAD\include;..\vendor\imgui;..\vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -95,15 +91,13 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Release-windows-x86_64\StellaEngine\StellaEngine.lib</ImportLibrary>
     </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\StellaEngine\StellaEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\StellaEngine\StellaEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\StellaEngine\StellaEngine.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
-    </PostBuildEvent>
+    <Lib>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Stella\Application.h" />
     <ClInclude Include="src\Stella\Core.h" />
@@ -113,17 +107,21 @@
     <ClInclude Include="src\Stella\Events\KeyEvent.h" />
     <ClInclude Include="src\Stella\Events\MouseEvent.h" />
     <ClInclude Include="src\Stella\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Stella\Input.h" />
+    <ClInclude Include="src\Stella\KeyCodes.h" />
     <ClInclude Include="src\Stella\Layer.h" />
     <ClInclude Include="src\Stella\LayerStack.h" />
     <ClInclude Include="src\Stella\Log.h" />
+    <ClInclude Include="src\Stella\MouseButtonCodes.h" />
     <ClInclude Include="src\Stella\Window.h" />
     <ClInclude Include="src\StellaEngine.h" />
     <ClInclude Include="src\StellaPH.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Stella\Application.cpp" />
+    <ClCompile Include="src\Stella\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Stella\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Stella\Layer.cpp" />
     <ClCompile Include="src\Stella\LayerStack.cpp" />
@@ -140,9 +138,6 @@
     <ProjectReference Include="..\vendor\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

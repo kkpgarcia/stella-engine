@@ -14,6 +14,7 @@ includeDir["GLFW"] = "vendor/GLFW/include"
 includeDir["SPDLOG"] = "vendor/spdlog/include"
 includeDir["GLAD"] = "vendor/GLAD/include"
 includeDir["imgui"] = "vendor/imgui"
+includeDir["glm"] = "vendor/glm"
 
 include "vendor/GLFW"
 include "vendor/GLAD"
@@ -21,8 +22,10 @@ include "vendor/imgui"
 
 project "StellaEngine"
     location "StellaEngine"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -32,7 +35,13 @@ project "StellaEngine"
     
     files {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/glm/glm/**.hpp",
+        "%{prj.name}/vendor/glm/glm/**.ini"
+    }
+
+    defines {
+        "_CRT_SECURE_NO_WARNINGS"
     }
 
     includedirs {
@@ -40,7 +49,8 @@ project "StellaEngine"
         "%{prj.name}/%{includeDir.SPDLOG}",
         "%{includeDir.GLFW}",
         "%{includeDir.GLAD}",
-        "%{includeDir.imgui}"
+        "%{includeDir.imgui}",
+        "%{includeDir.glm}"
     }
 
     links {
@@ -51,8 +61,6 @@ project "StellaEngine"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines {
@@ -61,25 +69,22 @@ project "StellaEngine"
             "GLFW_INCLUDE_NONE"
         }
 
-        postbuildcommands {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
-        }
-
         filter "configurations:Debug"
-            defines {
-                "STELLA_DEBUG",
-                "STELLA_ENABLE_ASSERTS"
-            }
+            defines "STELLA_DEBUG"
+            runtime "Debug"
             symbols "On"
 
         filter "configurations:Release"
             defines "STELLA_RELEASE"
+            runtime "Release"
             optimize "On"
 
 project "Sandbox"
     location "Sandbox"
     kind "ConsoleApp"
-    language "C++"  
+    language "C++"
+    cppdialect "C++17"
+    staticruntime "on"
     
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -91,7 +96,9 @@ project "Sandbox"
 
     includedirs {
         "StellaEngine/%{includeDir.SPDLOG}",
-        "StellaEngine/src"
+        "StellaEngine/src",
+        "/vendor",
+        "%{includeDir.glm}"
     }
 
     links {
@@ -99,8 +106,6 @@ project "Sandbox"
     }
 
     filter "system:windows"
-        cppdialect "C++17"
-        staticruntime "On"
         systemversion "latest"
 
         defines {
@@ -108,12 +113,11 @@ project "Sandbox"
         }
 
         filter "configurations:Debug"
-            defines {
-                "STELLA_DEBUG",
-                "STELLA_ENABLE_ASSERTS"
-            }
+            defines "STELLA_DEBUG"
+            runtime "Debug"
             symbols "On"
 
         filter "configurations:Release"
             defines "STELLA_RELEASE"
+            runtime "Release"
             optimize "On"
