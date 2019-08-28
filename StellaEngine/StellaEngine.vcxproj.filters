@@ -71,6 +71,18 @@
     </ClInclude>
     <ClInclude Include="src\StellaEngine.h" />
     <ClInclude Include="src\StellaPH.h" />
+    <ClInclude Include="src\Stella\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Stella\Renderer\Shader.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Stella\Renderer\Buffer.h" />
+    <ClInclude Include="src\Stella\Renderer\Renderer.h" />
+    <ClInclude Include="src\Stella\Renderer\VertexArray.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Stella\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Stella\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Stella\Renderer\OrthographicCamera.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -98,5 +110,16 @@
       <Filter>Stella</Filter>
     </ClCompile>
     <ClCompile Include="src\StellaPH.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Stella\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Stella\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Stella\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Stella\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\Stella\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Stella\Renderer\RendererCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Stella\Renderer\OrthographicCamera.cpp" />
   </ItemGroup>
 </Project>

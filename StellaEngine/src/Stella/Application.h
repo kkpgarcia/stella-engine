@@ -8,12 +8,18 @@
 
 #include "Stella/ImGui/ImGuiLayer.h"
 
+#include "Stella/Renderer/Shader.h"
+#include "Stella/Renderer/Buffer.h"
+#include "Stella/Renderer/VertexArray.h"
+
+#include "Stella/Renderer/OrthographicCamera.h"
+
 namespace Stella {
 	class STELLA_API Application
 	{
 	public:
 		Application();
-		virtual ~Application();
+		virtual ~Application() = default;
 
 		void Run(); 
 		
@@ -34,6 +40,13 @@ namespace Stella {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
+		std::shared_ptr<Shader> m_Shader;
+		std::shared_ptr<VertexArray> m_VertexArray;
+
+		std::shared_ptr<Shader> m_BlueShader;
+		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

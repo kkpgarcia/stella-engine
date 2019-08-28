@@ -97,6 +97,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Stella\Application.h" />
@@ -113,11 +117,23 @@
     <ClInclude Include="src\Stella\LayerStack.h" />
     <ClInclude Include="src\Stella\Log.h" />
     <ClInclude Include="src\Stella\MouseButtonCodes.h" />
+    <ClInclude Include="src\Stella\Renderer\Buffer.h" />
+    <ClInclude Include="src\Stella\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Stella\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Stella\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Stella\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Stella\Renderer\Renderer.h" />
+    <ClInclude Include="src\Stella\Renderer\Shader.h" />
+    <ClInclude Include="src\Stella\Renderer\VertexArray.h" />
     <ClInclude Include="src\Stella\Window.h" />
     <ClInclude Include="src\StellaEngine.h" />
     <ClInclude Include="src\StellaPH.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Stella\Application.cpp" />
@@ -127,6 +143,13 @@
     <ClCompile Include="src\Stella\LayerStack.cpp" />
     <ClCompile Include="src\Stella\Log.cpp" />
     <ClCompile Include="src\StellaPH.cpp" />
+    <ClCompile Include="src\Stella\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Stella\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Stella\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\Stella\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Stella\Renderer\RendererCommand.cpp" />
+    <ClCompile Include="src\Stella\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Stella\Renderer\VertexArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\vendor\GLFW\GLFW.vcxproj">

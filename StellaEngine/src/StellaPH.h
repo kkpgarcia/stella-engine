@@ -14,6 +14,6 @@
 
 #include <Stella/Log.h>
 
-#ifdef STELLA_PLATFORM WINDOWS
+#ifdef STELLA_PLATFORM_WINDOWS
 #include <Windows.h>
 #endif

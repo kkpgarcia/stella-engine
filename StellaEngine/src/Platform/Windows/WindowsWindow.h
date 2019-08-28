@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Stella/Window.h"
+#include "Stella/Renderer/GraphicsContext.h"
 #include <GLFW/glfw3.h>
 
 namespace Stella {
@@ -27,6 +28,7 @@ namespace Stella {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData {
 			std::string Title;

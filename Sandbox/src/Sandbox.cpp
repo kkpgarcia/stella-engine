@@ -7,8 +7,8 @@ public:
 	ExampleLayer() : Layer ("Example") {}
 
 	void OnUpdate() override {
-		if (Stella::Input::IsKeyPressed(ST_KEY_TAB)) {
-			STELLA_TRACE("Tab key is pressed (poll)!");
+		if (Stella::Input::IsKeyPressed(ST_KEY_A)) {
+			STELLA_INFO("A key is pressed (poll)!");
 		}
 	}
 
@@ -22,8 +22,8 @@ public:
 		if (evt.GetEventType() == Stella::EventType::KeyPressed) {
 			Stella::KeyPressedEvent& e = (Stella::KeyPressedEvent&)evt;
 			if (e.GetKeyCode() == ST_KEY_TAB)
-				STELLA_TRACE("Tabe key is pressed (event)!");
-			STELLA_TRACE("{0}", (char)e.GetKeyCode());
+				STELLA_INFO("Tabe key is pressed (event)!");
+			STELLA_INFO("{0}", (char)e.GetKeyCode());
 		}
 	}
 };

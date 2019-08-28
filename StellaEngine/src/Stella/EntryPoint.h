@@ -6,7 +6,7 @@ extern Stella::Application* Stella::CreateApplication();
 
 int main(int argc, char** argv) {
 	Stella::Log::Init();
-	STELLA_CORE_DEBUG("Initialized Kitty Engine.");
+	STELLA_CORE_INFO("Initialized Stella Engine.");
 
 	auto app = Stella::CreateApplication();
 	app->Run();
