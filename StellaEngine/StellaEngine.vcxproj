@@ -105,6 +105,7 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Stella\Application.h" />
     <ClInclude Include="src\Stella\Core.h" />
+    <ClInclude Include="src\Stella\Core\Timestep.h" />
     <ClInclude Include="src\Stella\EntryPoint.h" />
     <ClInclude Include="src\Stella\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Stella\Events\Event.h" />

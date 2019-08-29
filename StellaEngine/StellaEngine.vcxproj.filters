@@ -83,6 +83,7 @@
     <ClInclude Include="src\Stella\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
     <ClInclude Include="src\Stella\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Stella\Core\Timestep.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
