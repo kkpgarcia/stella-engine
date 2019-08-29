@@ -4,7 +4,7 @@
 
 struct GLFWwindow;
 
-namespace Stella {
+namespace StellaEngine {
 	class OpenGLContext : public GraphicsContext {
 	public:
 		OpenGLContext(GLFWwindow* windowHandle);

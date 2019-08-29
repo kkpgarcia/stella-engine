@@ -2,7 +2,7 @@
 
 #include "Stella/Renderer/RenderAPI.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class OpenGLRendererAPI : public RendererAPI {
 	public:
 		virtual void SetClearColor(const glm::vec4& color) override;

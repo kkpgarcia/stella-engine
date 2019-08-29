@@ -3,7 +3,7 @@
 #include "StellaPH.h"
 #include "Stella/Input.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class WindowsInput : public Input {
 	protected:
 		virtual bool IsKeyPressedImpl(int keycode) override;

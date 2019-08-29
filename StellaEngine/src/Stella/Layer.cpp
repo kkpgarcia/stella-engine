@@ -1,6 +1,6 @@
 #include "StellaPH.h"
 #include "Layer.h"
 
-namespace Stella {
+namespace StellaEngine {
 	Layer::Layer(const std::string& debugName) : m_DebugName(debugName) {}
 }

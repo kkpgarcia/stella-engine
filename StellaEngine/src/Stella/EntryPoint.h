@@ -2,13 +2,13 @@
 
 #ifdef STELLA_PLATFORM_WINDOWS
 
-extern Stella::Application* Stella::CreateApplication();
+extern StellaEngine::Application* StellaEngine::CreateApplication();
 
 int main(int argc, char** argv) {
-	Stella::Log::Init();
+	StellaEngine::Log::Init();
 	STELLA_CORE_INFO("Initialized Stella Engine.");
 
-	auto app = Stella::CreateApplication();
+	auto app = StellaEngine::CreateApplication();
 	app->Run();
 	delete app;
 	return 0;

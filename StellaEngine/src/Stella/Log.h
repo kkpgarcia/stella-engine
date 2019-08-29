@@ -5,7 +5,7 @@
 #include "spdlog/fmt/ostr.h"
 #include <memory>
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API Log {
 	public:
 		static void Init();
@@ -18,14 +18,14 @@ namespace Stella {
 	};
 };
 
-#define STELLA_CORE_TRACE(...) ::Stella::Log::GetCoreLogger()->trace(__VA_ARGS__)
-#define STELLA_CORE_ERROR(...) ::Stella::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define STELLA_CORE_WARNING(...) ::Stella::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define STELLA_CORE_INFO(...) ::Stella::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define STELLA_CORE_CRITICAL(...) ::Stella::Log::GetCoreLogger()->critical(__VA_ARGS__)
+#define STELLA_CORE_TRACE(...) ::StellaEngine::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define STELLA_CORE_ERROR(...) ::StellaEngine::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define STELLA_CORE_WARNING(...) ::StellaEngine::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define STELLA_CORE_INFO(...) ::StellaEngine::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define STELLA_CORE_CRITICAL(...) ::StellaEngine::Log::GetCoreLogger()->critical(__VA_ARGS__)
 		
-#define STELLA_TRACE(...) ::Stella::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define STELLA_ERROR(...) ::Stella::Log::GetClientLogger()->error(__VA_ARGS__)
-#define STELLA_WARNING(...) ::Stella::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define STELLA_INFO(...) ::Stella::Log::GetClientLogger()->info(__VA_ARGS__)
-#define STELLA_CRITICAL(...) ::Stella::Log::GetClientLogger()->critical(__VA_ARGS__)
+#define STELLA_TRACE(...) ::StellaEngine::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define STELLA_ERROR(...) ::StellaEngine::Log::GetClientLogger()->error(__VA_ARGS__)
+#define STELLA_WARNING(...) ::StellaEngine::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define STELLA_INFO(...) ::StellaEngine::Log::GetClientLogger()->info(__VA_ARGS__)
+#define STELLA_CRITICAL(...) ::StellaEngine::Log::GetClientLogger()->critical(__VA_ARGS__)

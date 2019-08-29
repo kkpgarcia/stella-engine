@@ -5,7 +5,7 @@
 #include "OrthographicCamera.h"
 #include "Shader.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class Renderer {
 	public:
 		static void BeginScene(OrthographicCamera& camera);

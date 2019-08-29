@@ -4,7 +4,7 @@
 #include "Stella/Renderer/GraphicsContext.h"
 #include <GLFW/glfw3.h>
 
-namespace Stella {
+namespace StellaEngine {
 	class WindowsWindow : public Window
 	{
 	public:

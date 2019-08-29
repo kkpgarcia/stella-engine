@@ -4,7 +4,7 @@
 #include "Renderer.h"
 #include "Platform/OpenGL/OpenGLVertexArray.h"
 
-namespace Stella {
+namespace StellaEngine {
 	VertexArray* VertexArray::Create() {
 		switch (Renderer::GetAPI()) {
 			case RendererAPI::API::None:

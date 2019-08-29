@@ -5,7 +5,7 @@
 
 #include <vector>
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API LayerStack {
 	public:
 		LayerStack();

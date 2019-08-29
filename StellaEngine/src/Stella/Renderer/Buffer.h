@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace Stella {
+namespace StellaEngine {
 	enum class ShaderDataType {
 		None = 0,
 		Float,

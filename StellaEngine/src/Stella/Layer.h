@@ -3,7 +3,7 @@
 #include "Stella/Core.h"
 #include "Stella/Events/Event.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API Layer {
 	public:
 		Layer(const std::string& name = "Layer");

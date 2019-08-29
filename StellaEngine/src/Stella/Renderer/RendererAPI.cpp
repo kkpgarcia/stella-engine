@@ -2,6 +2,6 @@
 
 #include "RendererAPI.h"
 
-namespace Stella {
+namespace StellaEngine {
 	RendererAPI::API RendererAPI::s_API = RendererAPI::API::OpenGL;
 }

@@ -4,7 +4,7 @@
 #include "Stella/Renderer/Buffer.h"
 #include <vector>
 
-namespace Stella {
+namespace StellaEngine {
 	class VertexArray {
 	public:
 		virtual ~VertexArray() = default;

@@ -5,7 +5,7 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
-namespace Stella {
+namespace StellaEngine {
 	Shader::Shader(const std::string& vertexSrc, const std::string& fragmentSrc) {
 		GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
 

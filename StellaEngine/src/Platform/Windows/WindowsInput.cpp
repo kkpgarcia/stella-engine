@@ -4,7 +4,7 @@
 #include "Stella/Application.h"
 #include <GLFW/glfw3.h>
 
-namespace Stella {
+namespace StellaEngine {
 	Input* Input::s_Instance = new WindowsInput();
 
 	bool WindowsInput::IsKeyPressedImpl(int keycode) {

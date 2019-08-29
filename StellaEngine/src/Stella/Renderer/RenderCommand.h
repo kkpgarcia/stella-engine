@@ -2,7 +2,7 @@
 
 #include "RenderAPI.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class RenderCommand {
 	public:
 		inline static void SetClearColor(const glm::vec4& color) {

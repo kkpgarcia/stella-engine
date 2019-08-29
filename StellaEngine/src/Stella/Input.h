@@ -3,7 +3,7 @@
 #include "StellaPH.h"
 #include "Stella/Core.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API Input {
 	public:
 		inline static bool IsKeyPressed(int keycode) { return s_Instance->IsKeyPressedImpl(keycode); }

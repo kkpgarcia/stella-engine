@@ -6,7 +6,7 @@
 #include "Stella/Events/KeyEvent.h"
 #include "Stella/Events/MouseEvent.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API ImGuiLayer : public Layer {
 	public:
 		ImGuiLayer();

@@ -1,7 +1,7 @@
 #include "StellaPH.h"
 #include "Renderer.h"
 
-namespace Stella {
+namespace StellaEngine {
 	Renderer::SceneData* Renderer::m_SceneData = new Renderer::SceneData;
 
 	void Renderer::BeginScene(OrthographicCamera& camera) {}

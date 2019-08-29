@@ -4,22 +4,22 @@
 
 #include <glad/glad.h>
 
-namespace Stella {
+namespace StellaEngine {
 	static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 	{
 		switch (type)
 		{
-		case Stella::ShaderDataType::Float:    return GL_FLOAT;
-		case Stella::ShaderDataType::Float2:   return GL_FLOAT;
-		case Stella::ShaderDataType::Float3:   return GL_FLOAT;
-		case Stella::ShaderDataType::Float4:   return GL_FLOAT;
-		case Stella::ShaderDataType::Mat3:     return GL_FLOAT;
-		case Stella::ShaderDataType::Mat4:     return GL_FLOAT;
-		case Stella::ShaderDataType::Int:      return GL_INT;
-		case Stella::ShaderDataType::Int2:     return GL_INT;
-		case Stella::ShaderDataType::Int3:     return GL_INT;
-		case Stella::ShaderDataType::Int4:     return GL_INT;
-		case Stella::ShaderDataType::Bool:     return GL_BOOL;
+		case StellaEngine::ShaderDataType::Float:    return GL_FLOAT;
+		case StellaEngine::ShaderDataType::Float2:   return GL_FLOAT;
+		case StellaEngine::ShaderDataType::Float3:   return GL_FLOAT;
+		case StellaEngine::ShaderDataType::Float4:   return GL_FLOAT;
+		case StellaEngine::ShaderDataType::Mat3:     return GL_FLOAT;
+		case StellaEngine::ShaderDataType::Mat4:     return GL_FLOAT;
+		case StellaEngine::ShaderDataType::Int:      return GL_INT;
+		case StellaEngine::ShaderDataType::Int2:     return GL_INT;
+		case StellaEngine::ShaderDataType::Int3:     return GL_INT;
+		case StellaEngine::ShaderDataType::Int4:     return GL_INT;
+		case StellaEngine::ShaderDataType::Bool:     return GL_BOOL;
 		}
 
 		STELLA_CORE_ASSERT(false, "Unknown ShaderDataType!");

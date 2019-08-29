@@ -2,7 +2,7 @@
 
 #include <glm/glm.hpp>
 
-namespace Stella {
+namespace StellaEngine {
 	class OrthographicCamera {
 	public:
 		OrthographicCamera(float left, float right, float bottom, float top);

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Stella {
+namespace StellaEngine {
 	class GraphicsContext {
 	public:
 		virtual void Init() = 0;

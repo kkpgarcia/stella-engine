@@ -2,12 +2,12 @@
 
 #include "../imgui/imgui.h"
 
-class ExampleLayer : public Stella::Layer {
+class ExampleLayer : public StellaEngine::Layer {
 public:
 	ExampleLayer() : Layer ("Example") {}
 
 	void OnUpdate() override {
-		if (Stella::Input::IsKeyPressed(ST_KEY_A)) {
+		if (StellaEngine::Input::IsKeyPressed(ST_KEY_A)) {
 			STELLA_INFO("A key is pressed (poll)!");
 		}
 	}
@@ -18,9 +18,9 @@ public:
 		ImGui::End();
 	}
 
-	void OnEvent(Stella::Event& evt) override {
-		if (evt.GetEventType() == Stella::EventType::KeyPressed) {
-			Stella::KeyPressedEvent& e = (Stella::KeyPressedEvent&)evt;
+	void OnEvent(StellaEngine::Event& evt) override {
+		if (evt.GetEventType() == StellaEngine::EventType::KeyPressed) {
+			StellaEngine::KeyPressedEvent& e = (StellaEngine::KeyPressedEvent&)evt;
 			if (e.GetKeyCode() == ST_KEY_TAB)
 				STELLA_INFO("Tabe key is pressed (event)!");
 			STELLA_INFO("{0}", (char)e.GetKeyCode());
@@ -28,7 +28,7 @@ public:
 	}
 };
 
-class Sandbox : public Stella::Application {
+class Sandbox : public StellaEngine::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
@@ -36,6 +36,6 @@ public:
 	~Sandbox() {}
 };
 
-Stella::Application* Stella::CreateApplication() {
+StellaEngine::Application* StellaEngine::CreateApplication() {
 	return new Sandbox();
 }

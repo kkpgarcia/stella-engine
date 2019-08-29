@@ -2,7 +2,7 @@
 
 #include "Stella/Renderer/VertexArray.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class OpenGLVertexArray : public VertexArray {
 	public:
 		OpenGLVertexArray();

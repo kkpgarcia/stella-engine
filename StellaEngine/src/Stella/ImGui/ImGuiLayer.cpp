@@ -12,7 +12,7 @@
 #include <glad/glad.h>
 
 
-namespace Stella {
+namespace StellaEngine {
 	ImGuiLayer::ImGuiLayer() : Layer("ImGuiLayer") {}
 
 	void ImGuiLayer::OnAttach() {

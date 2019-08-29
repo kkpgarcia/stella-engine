@@ -14,7 +14,7 @@
 
 #include "Stella/Renderer/OrthographicCamera.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API Application
 	{
 	public:

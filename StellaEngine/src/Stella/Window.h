@@ -5,7 +5,7 @@
 #include "Stella/Core.h"
 #include "Stella/Events/Event.h"
 
-namespace Stella {
+namespace StellaEngine {
 	struct WindowProps {
 		std::string Title;
 		unsigned int Width;

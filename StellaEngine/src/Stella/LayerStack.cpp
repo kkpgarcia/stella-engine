@@ -1,7 +1,7 @@
 #include "StellaPH.h"
 #include "LayerStack.h"
 
-namespace Stella {
+namespace StellaEngine {
 	LayerStack::LayerStack() {
 	}
 

@@ -3,7 +3,7 @@
 #include <string>
 #include <glm/glm.hpp>
 
-namespace Stella {
+namespace StellaEngine {
 	class Shader {
 	public:
 		Shader(const std::string& vertexSrc, const std::string& fragmentSrc);

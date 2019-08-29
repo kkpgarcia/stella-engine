@@ -4,7 +4,7 @@
 
 #include "StellaPH.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class STELLA_API KeyEvent : public Event {
 	public:
 		inline int GetKeyCode() const { return m_KeyCode; }

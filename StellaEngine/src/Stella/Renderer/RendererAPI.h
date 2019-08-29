@@ -3,7 +3,7 @@
 #include <glm/glm.hpp>
 #include "VertexArray.h"
 
-namespace Stella {
+namespace StellaEngine {
 	class RendererAPI {
 	public:
 		enum class API {

@@ -3,6 +3,6 @@
 
 #include "Platform/OpenGL/OpenGLRendererAPI.h"
 
-namespace Stella {
+namespace StellaEngine {
 	RendererAPI* RenderCommand::s_RendererAPI = new OpenGLRendererAPI;
 }

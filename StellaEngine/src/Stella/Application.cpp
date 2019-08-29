@@ -4,7 +4,7 @@
 #include "Stella/Renderer/Renderer.h"
 #include "Input.h"
 
-namespace Stella {
+namespace StellaEngine {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 

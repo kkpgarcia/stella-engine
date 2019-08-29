@@ -5,7 +5,7 @@
 #include <glad/glad.h>
 #include "GL/GL.h"
 
-namespace Stella {
+namespace StellaEngine {
 	OpenGLContext::OpenGLContext(GLFWwindow* windowHandle) : m_WindowHandle(windowHandle) {
 		STELLA_ASSERT(windowHandle, "Window handle is null!");
 	}
